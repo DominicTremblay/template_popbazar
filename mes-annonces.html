@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Annonces - PopBazaar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-store-alt me-2"></i>
+                PopBazaar
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Catégories
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Jeux vidéo</a></li>
+                            <li><a class="dropdown-item" href="#">Super-héros</a></li>
+                            <li><a class="dropdown-item" href="#">Films cultes</a></li>
+                            <li><a class="dropdown-item" href="#">Séries TV</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="favoris.html">Mes favoris</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="mes-annonces.html">Mes annonces</a>
+                    </li>
+                </ul>
+                <form class="d-flex me-2">
+                    <div class="input-group">
+                        <input class="form-control" type="search" placeholder="Rechercher..." aria-label="Search">
+                        <button class="btn btn-light" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+                <div class="d-flex align-items-center">
+                    <div class="dropdown">
+                        <a class="nav-link dropdown-toggle text-white d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown">
+                            <img src="images/40x40.png" class="rounded-circle me-2" alt="Avatar" style="width: 32px; height: 32px; object-fit: cover;">
+                            <span>LinkMaster64</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="profil.html"><i class="fas fa-user me-2"></i> Mon profil</a></li>
+                            <li><a class="dropdown-item" href="favoris.html"><i class="fas fa-heart me-2"></i> Mes favoris</a></li>
+                            <li><a class="dropdown-item" href="mes-annonces.html"><i class="fas fa-tag me-2"></i> Mes annonces</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt me-2"></i> Déconnexion</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
+                <li class="breadcrumb-item active">Mes annonces</li>
+            </ol>
+        </nav>
+        
+        <div class="section-header">
+            <h2><i class="fas fa-bullhorn me-2"></i>Mes annonces</h2>
+        </div>
+        
+        <!-- Stats Cards -->
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <div class="stats-card">
+                    <i class="fas fa-tag"></i>
+                    <h3>4</h3>
+                    <p>Annonces actives</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stats-card">
+                    <i class="fas fa-eye"></i>
+                    <h3>128</h3>
+                    <p>Vues totales</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stats-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>12</h3>
+                    <p>En favoris</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stats-card">
+                    <i class="fas fa-star"></i>
+                    <h3>4.5/5</h3>
+                    <p>Évaluation moyenne</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Action Button -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <ul class="nav nav-pills tab-pills">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Toutes (4)</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Actives (3)</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Vendues (1)</a>
+                </li>
+            </ul>
+            
+            <a href="ajouter.html" class="btn btn-primary">
+                <i class="fas fa-plus-circle me-2"></i>Créer une annonce
+            </a>
+        </div>
+        
+        <!-- Listings -->
+        <div class="row">
+            <!-- Listing 1 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="listing-status">
+                        <span class="badge bg-success">Active</span>
+                    </div>
+                    <div class="listing-actions">
+                        <div class="dropdown">
+                            <button class="btn btn-light btn-sm" type="button" data-bs-toggle="dropdown">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="details-annonce.html"><i class="fas fa-eye me-2"></i>Voir</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-edit me-2"></i>Modifier</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-check-circle me-2"></i>Marquer comme vendu</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-trash-alt me-2"></i>Supprimer</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <img src="images/300x200.png" class="card-img-top" alt="PS5">
+                    <div class="card-body">
+                        <h5 class="card-title">PS5 Edition Standard</h5>
+                        <div class="mb-2">
+                            <span class="price-tag">399 $</span>
+                            <span class="badge bg-primary ms-2">Jeux vidéo</span>
+                        </div>
+                        <p class="card-text">PlayStation 5 avec une manette et 2 jeux inclus. Sous garantie jusqu'en décembre.</p>
+                    </div>
+                    <div class="card-footer bg-white">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">Publiée hier</small>
+                            <span class="text-muted"><i class="fas fa-eye me-1"></i> 45 vues</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Listing 2 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="listing-status">
+                        <span class="badge bg-success">Active</span>
+                    </div>
+                    <div class="listing-actions">
+                        <div class="dropdown">
+                            <button class="btn btn-light btn-sm" type="button" data-bs-toggle="dropdown">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="details-annonce.html"><i class="fas fa-eye me-2"></i>Voir</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-edit me-2"></i>Modifier</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-check-circle me-2"></i>Marquer comme vendu</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-trash-alt me-2"></i>Supprimer</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <img src="images/300x200.png" class="card-img-top" alt="Figurine Spider-Man">
+                    <div class="card-body">
+                        <h5 class="card-title">Figurine Spider-Man Hot Toys</h5>
+                        <div class="mb-2">
+                            <span class="price-tag">280 $</span>
+                            <span class="badge bg-info ms-2">Super-héros</span>
+                        </div>
+                        <p class="card-text">Figurine Hot Toys de Spider-Man édition limitée, détails incroyables, hauteur 30 cm.</p>
+                    </div>
+                    <div class="card-footer bg-white">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">Publiée il y a 3 jours</small>
+                            <span class="text-muted"><i class="fas fa-eye me-1"></i> 32 vues</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Listing 3 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="listing-status">
+                        <span class="badge bg-danger">Vendue</span>
+                    </div>
+                    <div class="listing-actions">
+                        <div class="dropdown">
+                            <button class="btn btn-light btn-sm" type="button" data-bs-toggle="dropdown">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="details-annonce.html"><i class="fas fa-eye me-2"></i>Voir</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-edit me-2"></i>Modifier</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-check-circle me-2"></i>Réactiver</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-trash-alt me-2"></i>Supprimer</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <img src="images/300x200.png" class="card-img-top" alt="Game of Thrones" style="opacity: 0.6;">
+                    <div class="card-body" style="opacity: 0.6;">
+                        <h5 class="card-title">Intégrale Game of Thrones Blu-ray</h5>
+                        <div class="mb-2">
+                            <span class="price-tag">120 $</span>
+                            <span class="badge bg-danger ms-2">Séries TV</span>
+                        </div>
+                        <p class="card-text">Coffret intégral de Game of Thrones en Blu-ray avec tous les bonus et contenus exclusifs.</p>
+                    </div>
+                    <div class="card-footer bg-white" style="opacity: 0.6;">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">Vendue il y a 1 semaine</small>
+                            <span class="text-muted"><i class="fas fa-eye me-1"></i> 26 vues</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Listing 4 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="listing-status">
+                        <span class="badge bg-success">Active</span>
+                    </div>
+                    <div class="listing-actions">
+                        <div class="dropdown">
+                            <button class="btn btn-light btn-sm" type="button" data-bs-toggle="dropdown">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="details-annonce.html"><i class="fas fa-eye me-2"></i>Voir</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-edit me-2"></i>Modifier</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-check-circle me-2"></i>Marquer comme vendu</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-trash-alt me-2"></i>Supprimer</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <img src="images/300x200.png" class="card-img-top" alt="Star Wars Poster">
+                    <div class="card-body">
+                        <h5 class="card-title">Collection posters Star Wars originaux</h5>
+                        <div class="mb-2">
+                            <span class="price-tag">90 $</span>
+                            <span class="badge bg-warning ms-2">Films cultes</span>
+                        </div>
+                        <p class="card-text">Collection de posters originaux de la première trilogie Star Wars, format 40x60cm.</p>
+                    </div>
+                    <div class="card-footer bg-white">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">Publiée il y a 5 jours</small>
+                            <span class="text-muted"><i class="fas fa-eye me-1"></i> 25 vues</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Empty Listings State (Hidden) -->
+        <div class="empty-listings" style="display: none;">
+            <i class="fas fa-tag"></i>
+            <h3>Aucune annonce publiée</h3>
+            <p class="text-muted mb-4">Vous n'avez pas encore publié d'annonces.</p>
+            <a href="ajouter.html" class="btn btn-primary">
+                <i class="fas fa-plus-circle me-2"></i>Créer ma première annonce
+            </a>
+        </div>
+        
+        <!-- Pagination -->
+        <nav aria-label="Page navigation" class="mt-4">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Précédent</a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Suivant</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>À propos de PopBazaar</h5>
+                    <p>La plateforme de petites annonces dédiée à la culture pop : jeux vidéo, super-héros, films cultes et séries TV.</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Liens rapides</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Accueil</a></li>
+                        <li><a href="#" class="text-white">Déposer une annonce</a></li>
+                        <li><a href="#" class="text-white">Mon compte</a></li>
+                        <li><a href="#" class="text-white">Aide</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-envelope me-2"></i> contact@popbazaar.com</li>
+                        <li><i class="fas fa-phone me-2"></i> (123) 456-7890</li>
+                    </ul>
+                    <div class="mt-3">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-4 mb-4" style="border-color: rgba(255,255,255,0.1);">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 PopBazaar. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

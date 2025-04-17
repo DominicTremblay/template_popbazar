@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Favoris - PopBazar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-store-alt me-2"></i>
+                PopBazar
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Catégories
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Jeux vidéo</a></li>
+                            <li><a class="dropdown-item" href="#">Super-héros</a></li>
+                            <li><a class="dropdown-item" href="#">Films cultes</a></li>
+                            <li><a class="dropdown-item" href="#">Séries TV</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="favoris.html">Mes favoris</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mes-annonces.html">Mes annonces</a>
+                    </li>
+                </ul>
+                <form class="d-flex me-2">
+                    <div class="input-group">
+                        <input class="form-control" type="search" placeholder="Rechercher..." aria-label="Search">
+                        <button class="btn btn-light" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+                <div class="d-flex align-items-center">
+                    <div class="dropdown">
+                        <a class="nav-link dropdown-toggle text-white d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown">
+                            <img src="images/40x40.png" class="rounded-circle me-2" alt="Avatar" style="width: 32px; height: 32px; object-fit: cover;">
+                            <span>LinkMaster64</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="profil.html"><i class="fas fa-user me-2"></i> Mon profil</a></li>
+                            <li><a class="dropdown-item" href="favoris.html"><i class="fas fa-heart me-2"></i> Mes favoris</a></li>
+                            <li><a class="dropdown-item" href="mes-annonces.html"><i class="fas fa-tag me-2"></i> Mes annonces</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt me-2"></i> Déconnexion</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
+                <li class="breadcrumb-item active">Mes favoris</li>
+            </ol>
+        </nav>
+        
+        <div class="section-header">
+            <h2><i class="fas fa-heart me-2" style="color: red;"></i>Mes annonces favorites</h2>
+        </div>
+        
+        <!-- Favorites List -->
+        <div class="row">
+            <!-- Favorite Item 1 -->
+            <div class="col-md-4 col-lg-3">
+                <div class="card h-100">
+                    <div class="favorite-icon active" onclick="toggleFavorite(this)">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <span class="badge bg-warning category-badge">Films cultes</span>
+                    <img src="images/300x200.png" class="card-img-top" alt="Poster Star Wars">
+                    <div class="card-body">
+                        <h5 class="card-title">Poster original Star Wars 1977</h5>
+                        <div class="mb-2">
+                            <span class="price-tag">75 $</span>
+                            <span class="badge bg-secondary ms-2">Bon état</span>
+                        </div>
+                        <p class="card-text">Affiche originale de Star Wars Un Nouvel Espoir de 1977. Format 60x90cm, quelques traces d'usure.</p>
+                    </div>
+                    <div class="card-footer bg-white d-flex justify-content-between align-items-center">
+                        <small class="text-muted">Publié il y a 1 semaine</small>
+                        <a href="details-annonce.html" class="btn btn-sm btn-primary">Voir détails</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Favorite Item 2 -->
+            <div class="col-md-4 col-lg-3">
+                <div class="card h-100">
+                    <div class="favorite-icon active" onclick="toggleFavorite(this)">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <span class="badge bg-danger category-badge">Séries TV</span>
+                    <img src="images/300x200.png" class="card-img-top" alt="Game of Thrones">
+                    <div class="card-body">
+                        <h5 class="card-title">Épée Longclaw Game of Thrones</h5>
+                        <div class="mb-2">
+                            <span class="price-tag">150 $</span>
+                            <span class="badge bg-success ms-2">Neuf</span>
+                        </div>
+                        <p class="card-text">Réplique officielle de l'épée Longclaw de Jon Snow, édition collector avec support mural.</p>
+                    </div>
+                    <div class="card-footer bg-white d-flex justify-content-between align-items-center">
+                        <small class="text-muted">Publié il y a 2 jours</small>
+                        <a href="details-annonce.html" class="btn btn-sm btn-primary">Voir détails</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Favorite Item 3 -->
+            <div class="col-md-4 col-lg-3">
+                <div class="card h-100">
+                    <div class="favorite-icon active" onclick="toggleFavorite(this)">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <span class="badge bg-primary category-badge">Jeux vidéo</span>
+                    <img src="images/300x200.png" class="card-img-top" alt="Nintendo Switch">
+                    <div class="card-body">
+                        <h5 class="card-title">Nintendo Switch + Zelda BOTW</h5>
+                        <div class="mb-2">
+                            <span class="price-tag">125 $</span>
+                            <span class="badge bg-success ms-2">Comme neuf</span>
+                        </div>
+                        <p class="card-text">Console Nintendo Switch avec jeu Zelda Breath of the Wild inclus. Très bon état, peu utilisée.</p>
+                    </div>
+                    <div class="card-footer bg-white d-flex justify-content-between align-items-center">
+                        <small class="text-muted">Publié il y a 2 jours</small>
+                        <a href="details-annonce.html" class="btn btn-sm btn-primary">Voir détails</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Favorite Item 4 -->
+            <div class="col-md-4 col-lg-3">
+                <div class="card h-100">
+                    <div class="favorite-icon active" onclick="toggleFavorite(this)">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <span class="badge bg-info category-badge">Super-héros</span>
+                    <img src="images/300x200.png" class="card-img-top" alt="Casque Iron Man">
+                    <div class="card-body">
+                        <h5 class="card-title">Casque Iron Man échelle 1:1</h5>
+                        <div class="mb-2">
+                            <span class="price-tag">200 $</span>
+                            <span class="badge bg-success ms-2">Neuf</span>
+                        </div>
+                        <p class="card-text">Réplique officielle du casque d'Iron Man Mark III, échelle 1:1, avec effets lumineux.</p>
+                    </div>
+                    <div class="card-footer bg-white d-flex justify-content-between align-items-center">
+                        <small class="text-muted">Publié il y a 4 jours</small>
+                        <a href="details-annonce.html" class="btn btn-sm btn-primary">Voir détails</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Example of Empty Favorites State -->
+        <div class="empty-favorites" style="display: none;">
+            <i class="far fa-heart"></i>
+            <h3>Aucune annonce en favoris</h3>
+            <p class="text-muted mb-4">Vous n'avez pas encore ajouté d'annonces à vos favoris.</p>
+            <a href="index.html" class="btn btn-primary">
+                <i class="fas fa-search me-2"></i>Parcourir les annonces
+            </a>
+        </div>
+        
+        <!-- Pagination -->
+        <nav aria-label="Page navigation" class="mt-4">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Précédent</a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Suivant</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>À propos de PopBazar</h5>
+                    <p>La plateforme de petites annonces dédiée à la culture pop : jeux vidéo, super-héros, films cultes et séries TV.</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Liens rapides</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Accueil</a></li>
+                        <li><a href="#" class="text-white">Déposer une annonce</a></li>
+                        <li><a href="#" class="text-white">Mon compte</a></li>
+                        <li><a href="#" class="text-white">Aide</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-envelope me-2"></i> contact@PopBazar.com</li>
+                        <li><i class="fas fa-phone me-2"></i> (123) 456-7890</li>
+                    </ul>
+                    <div class="mt-3">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-4 mb-4" style="border-color: rgba(255,255,255,0.1);">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 PopBazar. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleFavorite(element) {
+            element.classList.toggle('active');
+            
+            // Si on désactive un favori, on peut aussi faire disparaître la carte entière
+            // avec un effet d'animation si c'est souhaité
+            if (!element.classList.contains('active')) {
+                const card = element.closest('.card');
+                card.style.opacity = '0';
+                card.style.transform = 'scale(0.8)';
+                card.style.transition = 'all 0.3s ease';
+                
+                setTimeout(() => {
+                    card.parentElement.remove();
+                    
+                    // Si plus aucun favori, afficher l'état vide
+                    const remainingCards = document.querySelectorAll('.favorite-icon.active');
+                    if (remainingCards.length === 0) {
+                        document.querySelector('.empty-favorites').style.display = 'block';
+                        document.querySelector('.pagination').style.display = 'none';
+                    }
+                }, 300);
+            }
+        }
+    </script>
+</body>
+</html>
