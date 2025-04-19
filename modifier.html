@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier une annonce - PopBazaar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-store-alt me-2"></i>
+                PopBazaar
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Catégories
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Jeux vidéo</a></li>
+                            <li><a class="dropdown-item" href="#">Super-héros</a></li>
+                            <li><a class="dropdown-item" href="#">Films cultes</a></li>
+                            <li><a class="dropdown-item" href="#">Séries TV</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="favorites.html">Mes favoris</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="my-listings.html">Mes annonces</a>
+                    </li>
+                </ul>
+                <form class="d-flex me-2">
+                    <div class="input-group">
+                        <input class="form-control" type="search" placeholder="Rechercher..." aria-label="Search">
+                        <button class="btn btn-light" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+                <div class="d-flex align-items-center">
+                    <div class="dropdown">
+                        <a class="nav-link dropdown-toggle text-white d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown">
+                            <img src="https://dummyimage.com/40x40/7f8c8d/ffffff&text=User" class="rounded-circle me-2" alt="Avatar" style="width: 32px; height: 32px; object-fit: cover;">
+                            <span>LinkMaster64</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="profile.html"><i class="fas fa-user me-2"></i> Mon profil</a></li>
+                            <li><a class="dropdown-item" href="favorites.html"><i class="fas fa-heart me-2"></i> Mes favoris</a></li>
+                            <li><a class="dropdown-item" href="my-listings.html"><i class="fas fa-tag me-2"></i> Mes annonces</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt me-2"></i> Déconnexion</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
+                <li class="breadcrumb-item"><a href="my-listings.html">Mes annonces</a></li>
+                <li class="breadcrumb-item active">Modifier une annonce</li>
+            </ol>
+        </nav>
+
+        <div class="create-listing-container">
+            <h1 class="form-title"><i class="fas fa-edit me-2"></i>Modifier votre annonce</h1>
+            <p class="text-muted mb-4">Mettez à jour les informations de votre annonce pour la communauté PopBazaar.</p>
+            
+            <form>
+                <!-- Catégorie Section -->
+                <div class="form-section">
+                    <h3 class="form-section-title">
+                        <i class="fas fa-folder"></i>
+                        Catégorie
+                    </h3>
+                    <p class="text-muted mb-3">Sélectionnez la catégorie qui correspond le mieux à votre produit</p>
+                    
+                    <div class="row g-3">
+                        <div class="col-md-3">
+                            <div class="category-card" onclick="selectCategory(this)">
+                                <i class="fas fa-gamepad"></i>
+                                <h5>Jeux vidéo</h5>
+                                <p class="mb-0 small text-muted">Consoles, jeux, accessoires</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="category-card selected" onclick="selectCategory(this)">
+                                <i class="fas fa-mask"></i>
+                                <h5>Super-héros</h5>
+                                <p class="mb-0 small text-muted">Figurines, comics, costumes</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="category-card" onclick="selectCategory(this)">
+                                <i class="fas fa-film"></i>
+                                <h5>Films cultes</h5>
+                                <p class="mb-0 small text-muted">DVDs, affiches, objets</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="category-card" onclick="selectCategory(this)">
+                                <i class="fas fa-tv"></i>
+                                <h5>Séries TV</h5>
+                                <p class="mb-0 small text-muted">Coffrets, produits dérivés</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Informations Section -->
+                <div class="form-section">
+                    <h3 class="form-section-title">
+                        <i class="fas fa-info-circle"></i>
+                        Informations sur le produit
+                    </h3>
+                    
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Titre de l'annonce <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="title" value="Figurine Iron Man Hot Toys" required>
+                        <div class="form-text">Soyez précis et concis (max. 70 caractères)</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description <span class="text-danger">*</span></label>
+                        <textarea class="form-control" id="description" rows="5" required>Figurine collector Iron Man Mark 50 de Hot Toys, édition limitée. Jamais déballée. Hauteur 30cm avec socle. Tous les accessoires inclus. Certificat d'authenticité. Produit sous licence officielle Marvel/Disney.</textarea>
+                        <div class="form-text">Minimum 30 caractères, évitez d'inclure vos coordonnées personnelles</div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="price" class="form-label">Prix (€) <span class="text-danger">*</span></label>
+                            <div class="input-group">
+                                <input type="number" class="form-control" id="price" min="0" step="0.01" value="249.99" required>
+                                <span class="input-group-text">€</span>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">État du produit <span class="text-danger">*</span></label>
+                            <div>
+                                <button type="button" class="condition-btn selected" onclick="selectCondition(this)">Neuf</button>
+                                <button type="button" class="condition-btn" onclick="selectCondition(this)">Comme neuf</button>
+                                <button type="button" class="condition-btn" onclick="selectCondition(this)">Très bon état</button>
+                                <button type="button" class="condition-btn" onclick="selectCondition(this)">Bon état</button>
+                                <button type="button" class="condition-btn" onclick="selectCondition(this)">État moyen</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="active" checked>
+                        <label class="form-check-label" for="active">
+                            Annonce active
+                        </label>
+                        <div class="form-text">Décochez cette option pour masquer temporairement votre annonce</div>
+                    </div>
+                </div>
+                
+                <!-- Photos Section -->
+                <div class="form-section">
+                    <h3 class="form-section-title">
+                        <i class="fas fa-camera"></i>
+                        Photos
+                    </h3>
+                    <p class="text-muted mb-3">Ajoutez au moins une photo de votre produit (max. 5 photos)</p>
+                    
+                    <div>
+                        <label for="fileInput" class="custom-file-upload">
+                            <i class="fas fa-upload me-2"></i>Ajouter des photos
+                        </label>
+                        <input id="fileInput" type="file" style="display: none" accept="image/*" multiple>
+                        <small class="text-muted ms-2">Formats acceptés: JPG, PNG - Max 5 Mo par image</small>
+                    </div>
+                    
+                    <div class="image-preview-container">
+                        <div class="image-preview image-preview-uploaded" style="background-image: url('https://dummyimage.com/150x150/3498db/ffffff&text=Iron+Man')">
+                            <div class="remove-image">
+                                <i class="fas fa-times"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="image-preview image-preview-uploaded" style="background-image: url('https://dummyimage.com/150x150/3498db/ffffff&text=Vue+Face')">
+                            <div class="remove-image">
+                                <i class="fas fa-times"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="image-preview image-preview-uploaded" style="background-image: url('https://dummyimage.com/150x150/3498db/ffffff&text=Vue+Dos')">
+                            <div class="remove-image">
+                                <i class="fas fa-times"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="image-preview">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        
+                        <div class="image-preview">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Statistiques de l'annonce -->
+                <div class="form-section">
+                    <h3 class="form-section-title">
+                        <i class="fas fa-chart-line"></i>
+                        Statistiques de l'annonce
+                    </h3>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title">124</h5>
+                                    <p class="card-text text-muted">Vues totales</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title">8</h5>
+                                    <p class="card-text text-muted">En favoris</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title">14 Juin 2024</h5>
+                                    <p class="card-text text-muted">Date de création</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Action Buttons -->
+                <div class="d-flex justify-content-between mt-4">
+                    <div>
+                        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                            <i class="fas fa-trash-alt me-2"></i>Supprimer
+                        </button>
+                        <button type="button" class="btn btn-outline-success ms-2" data-bs-toggle="modal" data-bs-target="#soldModal">
+                            <i class="fas fa-check-circle me-2"></i>Marquer comme vendu
+                        </button>
+                    </div>
+                    <div>
+                        <a href="my-listings.html" class="btn btn-outline-secondary me-2">
+                            <i class="fas fa-times me-2"></i>Annuler
+                        </a>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save me-2"></i>Enregistrer les modifications
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Confirmer la suppression</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Êtes-vous sûr de vouloir supprimer cette annonce ? Cette action est irréversible.</p>
+                    <p class="fw-bold">Figurine Iron Man Hot Toys</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-danger">Confirmer la suppression</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Sold Modal -->
+    <div class="modal fade" id="soldModal" tabindex="-1" aria-labelledby="soldModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="soldModalLabel">Marquer comme vendu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Félicitations pour votre vente ! Voulez-vous marquer cette annonce comme vendue ?</p>
+                    <p class="fw-bold">Figurine Iron Man Hot Toys</p>
+                    <p class="text-muted">L'annonce sera conservée dans votre historique mais ne sera plus visible par les autres utilisateurs.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-success">Confirmer la vente</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>À propos de PopBazaar</h5>
+                    <p>La plateforme de petites annonces dédiée à la culture pop : jeux vidéo, super-héros, films cultes et séries TV.</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Liens rapides</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Accueil</a></li>
+                        <li><a href="#" class="text-white">Déposer une annonce</a></li>
+                        <li><a href="#" class="text-white">Mon compte</a></li>
+                        <li><a href="#" class="text-white">Aide</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-envelope me-2"></i> contact@popbazaar.com</li>
+                        <li><i class="fas fa-phone me-2"></i> (123) 456-7890</li>
+                    </ul>
+                    <div class="mt-3">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-4 mb-4" style="border-color: rgba(255,255,255,0.1);">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 PopBazaar. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function selectCategory(element) {
+            // Remove the 'selected' class from all category cards
+            document.querySelectorAll('.category-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            
+            // Add the 'selected' class to the clicked card
+            element.classList.add('selected');
+        }
+        
+        function selectCondition(element) {
+            // Remove the 'selected' class from all condition buttons
+            document.querySelectorAll('.condition-btn').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            
+            // Add the 'selected' class to the clicked button
+            element.classList.add('selected');
+        }
+        
+        // Add event listeners for image preview removal
+        document.querySelectorAll('.remove-image').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const preview = this.closest('.image-preview');
+                preview.remove();
+            });
+        });
+    </script>
+</body>
+</html>
